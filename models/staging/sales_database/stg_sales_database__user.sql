@@ -1,5 +1,6 @@
-select user_name as user_id,
- customer_zip_code as user_zip_code,
- customer_city as user_city,
- customer_state as user_state
+select
+  user_name as user_id,
+  customer_state,
+  customer_city,
+  customer_zip_code_prefix
 from {{ source('sales_database', 'user') }}
