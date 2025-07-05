@@ -1,5 +1,5 @@
 select
-  order_item,
+  order_item as order_item_id,
   order_id,
   product_id,
   price,
