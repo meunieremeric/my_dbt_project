@@ -6,6 +6,7 @@ WITH order_lines AS (
     o.staff_id,
     sf.first_name AS staff_first_name,
     sf.last_name AS staff_last_name,
+    sf.manager_id,
     DATE_TRUNC(o.order_date, MONTH) AS order_month,
     oi.quantity,
     oi.list_price,
@@ -23,10 +24,11 @@ store_name,
 staff_id,
 staff_first_name,
 staff_last_name,
+manager_id,
 order_month,
 COUNT(DISTINCT order_id) AS order_count,
 SUM(quantity) AS total_quantity,
 SUM(quantity * list_price * (1 - discount)) AS revenue,
 SAFE_DIVIDE(SUM(quantity * list_price * (1 - discount)), COUNT(DISTINCT order_id)) AS average_basket
 FROM order_lines
-GROUP BY store_id, store_name, staff_id, staff_first_name, staff_last_name, order_month
+GROUP BY store_id, store_name, staff_id, staff_first_name, staff_last_name, manager_id, order_month
