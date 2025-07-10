@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_local_bike_orders
+    description: Staging table for orders.
+    columns:
+      - name: order_id
+        description: Unique order identifier
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: Customer identifier
+      - name: order_status
+        description: Status of the order
+      - name: order_date
+        description: Date the order was placed
+      - name: required_date
+        description: Requested delivery date
+      - name: shipped_date
+        description: Shipping date
+      - name: store_id
+        description: Store that processed the order
+      - name: staff_id
+        description: Staff who handled the order

@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: mart_sales_performance
+    description: >
+      Aggregated monthly sales KPIs per store, brand, and category.
+    columns:
+      - name: store_id
+        description: Store identifier
+        tests:
+          - not_null
+      - name: store_name
+        description: Store name
+        tests:
+          - not_null
+
+      - name: category_id
+        description: Category identifier
+        tests:
+          - not_null
+      - name: category_name
+        description: Category name
+        tests:
+          - not_null
+
+      - name: brand_id
+        description: Brand identifier
+        tests:
+          - not_null
+      - name: brand_name
+        description: Brand name
+        tests:
+          - not_null
+
+      - name: order_year
+        description: Year of the order
+        tests:
+          - not_null
+      - name: order_month
+        description: Month of the order
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1,2,3,4,5,6,7,8,9,10,11,12]
+              quote: false
+
+      - name: nb_orders
+        description: Number of unique orders
+        tests:
+          - not_null
+
+      - name: total_quantity
+        description: Total quantity sold
+        tests:
+          - not_null
+
+      - name: total_revenue
+        description: Net revenue (after discounts)
+        tests:
+          - not_null
+
+      - name: avg_basket
+        description: Average revenue per order
+        tests:
+          - not_null

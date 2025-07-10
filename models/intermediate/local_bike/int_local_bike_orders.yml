@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: int_local_bike_orders
+    description: >
+      Enriches orders with customer, store, and staff details.
+      This model prepares clean order-level data for downstream marts.
+    columns:
+      - name: order_id
+        description: Unique order ID.
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: ID of the customer who placed the order.
+
+      - name: customer_first_name
+        description: First name of the customer.
+
+      - name: customer_last_name
+        description: Last name of the customer.
+
+      - name: order_status
+        description: Current status of the order.
+
+      - name: order_date
+        description: Date when the order was placed.
+        tests:
+          - not_null
+
+      - name: required_date
+        description: Expected delivery date.
+
+      - name: shipped_date
+        description: Actual delivery date.
+
+      - name: store_id
+        description: Store where the order was placed.
+
+      - name: store_name
+        description: Name of the store.
+
+      - name: staff_id
+        description: ID of the staff who handled the order.
+
+      - name: staff_first_name
+        description: First name of the staff member.
+
+      - name: staff_last_name
+        description: Last name of the staff member.

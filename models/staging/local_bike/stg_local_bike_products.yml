@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_local_bike_products
+    description: Staging table for products.
+    columns:
+      - name: product_id
+        description: Unique product identifier
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: Product name
+      - name: brand_id
+        description: Brand associated with the product
+      - name: category_id
+        description: Category associated with the product
+      - name: model_year
+        description: Model year of the product
+      - name: list_price
+        description: Product price

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_local_bike_customers
+    description: Staging table for customers.
+    columns:
+      - name: customer_id
+        description: Unique customer identifier
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: Customer's first name
+      - name: last_name
+        description: Customer's last name
+      - name: email
+        description: Customer email address
+      - name: phone
+        description: Customer phone number
+      - name: street
+        description: Street address
+      - name: city
+        description: City
+      - name: state
+        description: State
+      - name: zip_code
+        description: Postal code

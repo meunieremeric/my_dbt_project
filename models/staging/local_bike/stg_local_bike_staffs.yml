@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_local_bike_staffs
+    description: Staging table for store staff.
+    columns:
+      - name: staff_id
+        description: Unique staff identifier
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: First name
+      - name: last_name
+        description: Last name
+      - name: email
+        description: Work email
+      - name: phone
+        description: Phone number
+      - name: active
+        description: Whether the staff is currently active
+      - name: store_id
+        description: Store the staff is assigned to
+      - name: manager_id
+        description: Identifier of the staff’s manager
