@@ -21,3 +21,16 @@ sources:
       - name: order_item
       - name: seller
       - name: user
+
+  - name: Local_bike
+    schema: Local_bike
+    tables:
+      - name: brands
+      - name: categories
+      - name: customers
+      - name: order_items
+      - name: orders
+      - name: products
+      - name: staffs
+      - name: stocks
+      - name: stores

@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: int_local_bike_products
+    description: >
+      Enriches products with brand and category names. 
+      Acts as a single source of truth for product-related joins across the project.
+    columns:
+      - name: product_id
+        description: Unique product identifier.
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        description: Name of the product.
+
+      - name: category_id
+        description: Foreign key for the product category.
+
+      - name: category_name
+        description: Name of the product category.
+
+      - name: brand_id
+        description: Foreign key for the product brand.
+
+      - name: brand_name
+        description: Name of the product brand.
+
+      - name: model_year
+        description: Year the product model was released.
+
+      - name: list_price
+        description: Product’s base price.
+
+
+
+

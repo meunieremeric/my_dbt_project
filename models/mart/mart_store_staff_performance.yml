@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: mart_store_staff_performance
+    description: >
+      Aggregates sales performance per store and staff member, providing key metrics such as revenue, total quantity sold, 
+      number of orders, and average basket value. The aggregation is performed monthly.
+
+    columns:
+      - name: store_id
+        description: Unique identifier of the store.
+        tests:
+          - not_null
+
+      - name: store_name
+        description: Name of the store.
+
+      - name: staff_id
+        description: Unique identifier of the staff member (sales representative).
+        tests:
+          - not_null
+
+      - name: staff_first_name
+        description: First name of the staff member.
+
+      - name: staff_last_name
+        description: Last name of the staff member.
+
+      - name: order_month
+        description: Month of the order, truncated to the first day of the month.
+        tests:
+          - not_null
+
+      - name: order_count
+        description: Number of unique orders handled by the staff during the month.
+
+      - name: total_quantity
+        description: Total quantity of products sold by the staff in the period.
+
+      - name: revenue
+        description: Total revenue generated (quantity * list_price * (1 - discount)).
+
+      - name: average_basket
+        description: Average basket value = revenue / number of orders.

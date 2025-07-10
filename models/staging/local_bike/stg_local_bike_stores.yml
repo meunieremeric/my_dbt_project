@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_local_bike_stores
+    description: Staging table for Local Bike stores.
+    columns:
+      - name: store_id
+        description: Unique store identifier
+        tests:
+          - not_null
+          - unique
+      - name: store_name
+        description: Store name
+      - name: phone
+        description: Store phone number
+      - name: email
+        description: Contact email
+      - name: street
+        description: Street address
+      - name: city
+        description: City
+      - name: state
+        description: State
+      - name: zip_code
+        description: Postal code

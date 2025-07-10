@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_local_bike_order_items
+    description: Staging table for order line items.
+    columns:
+      - name: order_id
+        description: Order identifier
+      - name: item_id
+        description: Line item number
+        tests:
+          - not_null
+      - name: product_id
+        description: Product identifier
+      - name: quantity
+        description: Quantity ordered
+      - name: list_price
+        description: Unit price
+      - name: discount
+        description: Discount rate applied

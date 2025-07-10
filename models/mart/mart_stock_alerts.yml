@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: mart_stock_alerts
+    description: >
+      Detects stock issues such as out-of-stock, low stock, or overstocked products.
+      Based on stock quantity and recent sales performance by store and product.
+    columns:
+      - name: product_id
+        description: Unique identifier for the product
+        tests:
+          - not_null
+
+      - name: product_name
+        description: Name of the product
+        tests:
+          - not_null
+
+      - name: category_id
+        description: Product category ID
+        tests:
+          - not_null
+
+      - name: category_name
+        description: Product category name
+        tests:
+          - not_null
+
+      - name: brand_id
+        description: Product brand ID
+        tests:
+          - not_null
+
+      - name: brand_name
+        description: Product brand name
+        tests:
+          - not_null
+
+      - name: store_id
+        description: Store ID where the product is stocked
+        tests:
+          - not_null
+
+      - name: store_name
+        description: Name of the store
+        tests:
+          - not_null
+
+      - name: current_stock
+        description: Current stock quantity of the product
+        tests:
+          - not_null
+
+      - name: total_quantity_sold_last_30d
+        description: Total quantity sold for the product in the last 30 days
+
+      - name: stock_status
+        description: >
+          Stock alert category (out_of_stock, low_stock, overstock, ok).
+          Used to monitor inventory issues.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['out_of_stock', 'low_stock', 'overstock', 'ok']
