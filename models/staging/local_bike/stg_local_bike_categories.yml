@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_local_bike_categories
+    description: Staging table for product categories.
+    columns:
+      - name: category_id
+        description: Unique category identifier
+        tests:
+          - not_null
+          - unique
+      - name: category_name
+        description: Name of the category

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_local_bike_brands
+    description: Staging table for bike brands.
+    columns:
+      - name: brand_id
+        description: Unique brand identifier
+        tests:
+          - not_null
+          - unique
+      - name: brand_name
+        description: Name of the brand

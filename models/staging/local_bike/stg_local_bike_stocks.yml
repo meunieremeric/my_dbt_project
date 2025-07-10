@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_local_bike_stocks
+    description: Staging table for store product inventory.
+    columns:
+      - name: store_id
+        description: Store identifier
+      - name: product_id
+        description: Product identifier
+      - name: quantity
+        description: Quantity in stock

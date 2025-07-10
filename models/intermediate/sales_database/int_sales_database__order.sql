@@ -6,7 +6,7 @@ select order_id,
     order_created_at,
     order_approved_at,
     sum(total_order_item_amount) as total_order_amount,
-    sum(item_quantity) as total_items,
+    sum(quantity) as total_items,
     count(distinct product_id) as total_distinct_items
 from {{ ref('int_sales_database__order_item') }}
 group by order_id,
@@ -28,8 +28,6 @@ group by order_id
 select oi.order_id,
     oi.user_id,
     oi.order_status,
-    u.user_city,
-    u.user_state,
     oi.order_created_at,
     oi.order_approved_at,
     coalesce(f.sum_feedback_score,0) as sum_feedback_score,
