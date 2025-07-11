@@ -26,6 +26,11 @@ models:
       - name: staff_last_name
         description: Last name of the staff member.
 
+      - name: manager_id
+        description: Unique identifier of the staff member.
+        tests:
+          - not_null
+          
       - name: order_month
         description: Month of the order, truncated to the first day of the month.
         tests:
